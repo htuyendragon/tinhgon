@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html>
+<head><title>Quản lý User</title></head>
 <body>
-    <h2>Đăng nhập</h2>
-    <form action="/login" method="post">
-        Username: <input type="text" name="username"><br><br>
-        Password: <input type="password" name="password"><br><br>
-        <button type="submit">Gửi</button>
-    </form>
+    <h2>Danh sách người dùng hệ thống</h2>
+    <table border="1">
+        <tr>
+            <th>Username</th>
+            <th>UID</th>
+            <th>Home Directory</th>
+            <th>Shell</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.username }}</td>
+            <td>{{ user.uid }}</td>
+            <td>{{ user.home_directory }}</td>
+            <td>{{ user.shell }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
